@@ -1,5 +1,10 @@
 FROM php:8.2-cli
 
+# Install Wget
+RUN  apt-get update \
+  && apt-get install -y wget \
+  && rm -rf /var/lib/apt/lists/*
+
 # Install PHPUnit
 RUN wget https://phar.phpunit.de/phpunit-9.phar && \
     chmod +x phpunit-9.phar && \
