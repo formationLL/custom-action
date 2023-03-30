@@ -11,6 +11,9 @@ jobs:
 
     - name: Build the Docker image
       run: docker build -t my-phpunit .
+    
+    - name: Composer install
+      uses: php-actions/composer@v6
 
     - name: Run PHPUnit tests
       run: docker run my-phpunit --bootstrap vendor/autoload.php --configuration test/phpunit.xml 
