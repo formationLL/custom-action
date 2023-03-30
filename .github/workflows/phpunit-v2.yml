@@ -1,0 +1,16 @@
+name: PHPUnit V2
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build the Docker image
+      run: docker build -t my-phpunit .
+
+    - name: Run PHPUnit tests
+      run: docker run my-phpunit
