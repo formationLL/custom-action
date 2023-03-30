@@ -1,15 +1,5 @@
 FROM php:8.2-cli
 
-# Install Wget
-RUN  apt-get update \
-  && apt-get install -y wget \
-  && rm -rf /var/lib/apt/lists/*
-
-# Install PHPUnit
-RUN wget https://phar.phpunit.de/phpunit-9.phar && \
-    chmod +x phpunit-9.phar && \
-    mv phpunit-9.phar /usr/local/bin/phpunit
-
 # Set the working directory to the project root
 WORKDIR /app
 
@@ -17,4 +7,4 @@ WORKDIR /app
 COPY . /app
 
 # Define the default command to run when the container starts
-CMD ["phpunit"]
+CMD ["php"]
