@@ -8,7 +8,7 @@ class UserTest extends \PHPUnit\Framework\TestCase {
 		$user = new User();
 		self::assertStringContainsString(
 			"Hello",
-			$user->getName()
+			$user->getName("John")
 		);
 	}
 }
