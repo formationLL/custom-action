@@ -13,4 +13,4 @@ jobs:
       run: docker build -t my-phpunit .
 
     - name: Run PHPUnit tests
-      run: docker run my-phpunit
+      run: docker run my-phpunit --bootstrap vendor/autoload.php --configuration test/phpunit.xml 
